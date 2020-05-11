@@ -6,17 +6,32 @@
 
 body {
     font-family: 'Roboto';
-    color: #333;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    color: rgba(0,0,0,0.8);
+    position: relative;
+}
 }
 
 section {
     width: 100%;
     padding: 40px;
-    height: calc(100vh - 190px);
+    height: calc(100vh - 130px);
     overflow: scroll;
 }
 
-h1, h2 {
+.content-holder {
+    max-width: 680px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+h1 {
+    font-size: 35px;
+    margin-bottom: 40px;
+}
+
+h2 {
     font-size: 30px;
     margin-bottom: 30px;
 }
@@ -32,6 +47,24 @@ p {
     margin-bottom: 15px;
     font-size: 16px;
     line-height: 24px;
+    color: rgba(0,0,0,0.84)
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.picture {
+    margin-bottom: 25px;
+}
+
+.picture span{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    display: block;
+    color: rgba(0, 0, 0, 0.54);
 }
 
 .holder {
@@ -39,7 +72,7 @@ p {
     min-height: 100vh;
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 1fr 190px;
+    grid-template-rows: 1fr 130px;
     grid-template-areas: 'main' 'thumbs'
 }
 
@@ -47,7 +80,7 @@ p {
     position: relative;
     grid-area: thumbs;
     width: 100%;
-    padding: 20px;
+    padding: 20px 40px;
     height: 100%;
     background-color: #F0F0F0;
     overflow: scroll;
@@ -58,6 +91,7 @@ p {
     display: grid;
     grid-gap: 20px;
     grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fit, 120px);
 }
 
 .thumbholder div {
@@ -66,9 +100,9 @@ p {
     align-items: center;
     border: 1px solid #AAA;
     border-radius: 4px;
-    width: 200px;
-    height: 150px;
-    font-size: 24px;
+    width: 120px;
+    height: 90px;
+    font-size: 20px;
     transition: .25s;
     cursor: pointer;
     box-shadow: inset 0 0 0 rgba(0,0,0,.2);
@@ -83,18 +117,19 @@ p {
     box-shadow: inset 0 0 10px rgba(0,0,0,.2);
 }
 
+
 #main {
     grid-area: main;
     width: 100%;
     display: grid;
     grid-template-rows: repeat(auto-fill, 100vh);
-    height: calc(100vh - 190px);
+    height: calc(100vh - 130px);
     overflow: hidden;
 }
 
 @media (min-width: 900px) {
     .holder {
-        grid-template-columns: 240px 1fr;
+        grid-template-columns: 160px 1fr;
         grid-template-rows: auto;
         grid-template-areas: 'thumbs main'
     }
@@ -107,7 +142,11 @@ p {
         height: 100vh;
     }
 
-    .section {
+    #thumbnails {
+        padding: 20px;
+    }
+
+    section {
         min-height: 100vh;
     }
 }
