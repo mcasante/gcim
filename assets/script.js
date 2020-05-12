@@ -17,6 +17,7 @@ function createThumb(section) {
     div.setAttribute('data-link', section.getAttribute('data-slug'))
     div.classList.add('thumb')
     div.innerHTML = `<span>${title}</span>`
+    div.style.backgroundImage = `url(${section.getAttribute('data-image')})`
 
     div.addEventListener('click', function() {
         setSelected(this)
