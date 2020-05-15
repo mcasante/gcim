@@ -35,7 +35,7 @@ function setSelected(selected) {
 
 window.addEventListener('load', function(){
     const sections = selectAll('#main section')
-    const thumbHolder = document.querySelector('#thumbnails .thumbholder')
+    const thumbHolder = document.querySelector('#thumbnails .Thumbnails')
     
     const routes = setSections(sections, thumbHolder)
 
