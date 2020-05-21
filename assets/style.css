@@ -18,6 +18,9 @@ body {
     position: relative;
 }
 
+q:before { content: '' }
+q:after { content: '' }
+
 .Content-holder mark {
     background: transparent;
     color: rgba(0,0,0,0.8);
@@ -232,15 +235,68 @@ img {
 
 
 
-/* SLIDE */
+/* 
+    SLIDE COMPONENT
+*/
 
 .Slide {
     position: relative;
     color: #f3cd74;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     background: hsl(232, 41%, 20%);
     overflow: hidden;
+}
+
+.Slide--two-columns {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.Slide mark {
+    background: inherit;
+    color: #5dcad1;
+}
+
+.Slide h1 {
+    font-size: 50px;
+    text-transform: uppercase;
+    font-weight: 900;
+    text-align: center;
+}
+
+.Slide h1 span {
+    font-size: 16px;
+    font-weight: 300;
+    display: block;
+}
+.Slide h2 {
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.Slide p, .Slide ul li {
+    font-size: 24px;
+    color: hsl(232, 41%, 95%);
+}
+
+.Slide ul {
+    list-style: none;
+}
+
+.Slide ul li:before {
+    content: '—';
+    margin-right: 10px;
+}
+
+
+
+.Slide__content {
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    padding: 40px;
 }
 
 .Squares {
@@ -276,17 +332,7 @@ img {
     box-sizing: border-box;
 }
 
-.Slide .Squares:first-of-type {
-    top: -8vw;
-    left: -8vw;
-}
 
-.Slide .Squares:last-of-type {
-    width: 18vw;
-    height: 18vw;
-    bottom: -5vw;
-    right: -5vw;
-}
 
 .Scroll-icon {
     position: absolute;
@@ -343,39 +389,86 @@ img {
     50%, 100% { transform: scale(1,1) translateY(30px); }
 }
 
-.Slide__content {
-    height: 100%;
-    position: relative;
-    z-index: 1;
-    padding: 40px;
-}
 
-.Slide h1 {
-    font-size: 50px;
-    text-transform: uppercase;
-    font-weight: 900;
-    text-align: center;
-}
+/*
+    Introdução css
+*/
 
-.Slide h1 span {
-    font-size: 16px;
-    font-weight: 300;
-    display: block;
-}
-
-.Slide__content--intro {
+.Slide--intro .Slide__content {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.Slide mark {
-    background: inherit;
-    color: #5dcad1;
+.Slide--intro .Squares:first-of-type {
+    top: -8vw;
+    left: -8vw;
+}
+
+.Slide--intro .Squares:last-of-type {
+    width: 18vw;
+    height: 18vw;
+    bottom: -5vw;
+    right: -5vw;
 }
 
 
+/*
+    Agradecimentos css
+*/
+
+
+.Agradecimentos {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+}
+
+.Slide {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+ul.Team li{
+    font-size: 18px;
+    line-height: 30px;
+}
+
+ul.Team li > span {
+    font-size: 14px;
+    color: hsl(232, 41%, 80%)
+}
+
+.Slide q {
+    font-size: 30px;
+    color: #edeef7;
+    font-weight: 600;
+}
+
+.bill-gates-quote {
+    max-width: 100%;
+    width: 450px;
+}
+
+
+/*
+    Flexbox modifiers
+*/
+
+.d-flex { display: flex; }
+
+.f-center {
+    justify-content: center;
+    align-items: center;
+}
+
 @media (min-width: 900px) {
+    .Slide--two-columns {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
     .Slide h1 {
         font-size: 80px;
     }

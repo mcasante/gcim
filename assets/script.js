@@ -36,6 +36,17 @@ function setSelected(selected) {
 window.addEventListener('load', function(){
     const sections = selectAll('#main section')
     const thumbHolder = document.querySelector('#thumbnails .Thumbnails')
+
+    const scrollButtons = selectAll('.Scroll-icon');
+
+    scrollButtons.forEach(button => {
+        button.addEventListener('click', e => {
+            e.preventDefault();
+            const link = e.target.getAttribute('data-link-to')
+            const post = document.querySelector(`[data-link="${link}"]`)
+            post.scrollIntoView({behavior: 'smooth'})
+        })
+    })
     
     const routes = setSections(sections, thumbHolder)
 
