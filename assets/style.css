@@ -124,7 +124,12 @@ img {
     grid-template-columns: repeat(auto-fit, 120px);
 }
 
-.Thumbnails div {
+.Spacer {
+    width: 20px;
+    height: auto;
+}
+
+.Thumbnails .thumb {
     position: relative;
     background-size: cover;
     background-position: center;
@@ -139,7 +144,7 @@ img {
     overflow: hidden;
 }
 
-.Thumbnails div span {
+.Thumbnails .thumb span {
     color: #f3cd74;
     font-weight: 600;
     position: absolute;
@@ -159,7 +164,7 @@ img {
     transition: .25s;
 }
 
-.Thumbnails div span::before {
+.Thumbnails .thumb span::before {
     z-index: -1;
     content: '';
     position: absolute;
@@ -168,25 +173,25 @@ img {
     background-color: rgba(0,0,0,.75)
 }
 
-.Thumbnails div:hover {
+.Thumbnails .thumb:hover {
     box-shadow: 0 0 0 rgba(0,0,0,0),
                 0 0 0 rgba(255,255,255,0);
     transition: .25s;
     }
 
-.Thumbnails div.active {
+.Thumbnails .thumb.active {
     box-shadow: inset 4px 4px 12px rgba(0,0,0,.9),
                 inset -4px -4px 12px rgba(255,255,255,.8);
     transition: .25s;
 }
 
-.Thumbnails div.active span{
+.Thumbnails .thumb.active span{
     background: linear-gradient(135deg, rgba(0,0,0,0.4), rgba(255,255,255,0.5));
     border-bottom: 5px solid #f3cd74;
 
 }
 
-.Thumbnails div.active:hover {
+.Thumbnails .thumb.active:hover {
     box-shadow: inset 4px 4px 12px rgba(0,0,0,.9),
                 inset -4px -4px 12px rgba(255,255,255,.8);
         transition: .25s;
@@ -214,6 +219,11 @@ img {
         justify-content: center;
     }
 
+    .Spacer {
+        width: auto;
+        height: 20px;
+    }
+
     #main {
         height: 100vh;
     }
@@ -221,7 +231,7 @@ img {
     #thumbnails {
         position: relative;
         height: 100%;
-        padding: 20px;
+        padding: 40px 20px;
         border-right: 1px solid rgba(255,255,255,.25);
         border-top: none;
     }
@@ -293,7 +303,6 @@ img {
 
 
 .Slide__content {
-    min-height: 100vh;
     position: relative;
     z-index: 1;
     padding: 40px;
@@ -464,6 +473,10 @@ ul.Team li > span {
 }
 
 @media (min-width: 900px) {
+    .Slide__content {
+        min-height: 100vh;
+    }
+
     .Slide--two-columns {
         display: grid;
         grid-template-columns: 1fr 1fr;

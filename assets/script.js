@@ -8,6 +8,11 @@ function setSections(sections, holder) {
         )
         routes.push(s.getAttribute('data-slug'))
     })
+
+    const spacer = document.createElement('div')
+    spacer.classList.add('Spacer')
+    holder.appendChild(spacer)
+
     return routes
 }
 
