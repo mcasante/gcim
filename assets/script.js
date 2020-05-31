@@ -57,7 +57,7 @@ window.addEventListener('load', function(){
         button.addEventListener('click', e => {
             e.preventDefault();
             const link = e.target.getAttribute('data-link-to')
-            const post = document.querySelector(`[data-link="${link}"]`)
+            const post = document.querySelector(`[data-post-link="${link}"]`)
             post.scrollIntoView({behavior: 'smooth'})
         })
     })
