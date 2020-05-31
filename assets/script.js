@@ -76,11 +76,9 @@ window.addEventListener('load', function(){
 
 window.addEventListener('resize', () => {
     changeVhVar()
-    if(theHash) {
-        document.querySelector(`[data-link="${theHash}"]`).click()
-    } else {
+    setTimeout(() => {
         const theHash = location.hash.substr(1);
         document.querySelector(`[data-link="${theHash}"]`).click()
-    }
+    }, 200)
 });
 
