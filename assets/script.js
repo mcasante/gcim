@@ -78,7 +78,8 @@ window.addEventListener('resize', () => {
     changeVhVar()
     setTimeout(() => {
         const theHash = location.hash.substr(1);
-        document.querySelector(`[data-link="${theHash}"]`).click()
+        const section = document.querySelector(`[data-slug="${theHash}"]`)
+        section.scrollIntoView({behavior: 'smooth'})
     }, 200)
 });
 
