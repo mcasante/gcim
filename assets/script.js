@@ -1,5 +1,11 @@
 const selectAll = query => Array.from(document.querySelectorAll(query))
 
+
+function changeVhVar() {
+    let vh = window.innerHeight * 0.01
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
 function setSections(sections, holder) {
     const routes = []
     sections.forEach(s => {
@@ -39,6 +45,9 @@ function setSelected(selected) {
 }
 
 window.addEventListener('load', function(){
+
+    changeVhVar()
+    
     const sections = selectAll('#main section')
     const thumbHolder = document.querySelector('#thumbnails .Thumbnails')
 
@@ -63,3 +72,7 @@ window.addEventListener('load', function(){
         document.querySelector('.thumb').click()
     }
 })
+
+
+window.addEventListener('resize', changeVhVar);
+
