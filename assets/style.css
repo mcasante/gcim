@@ -61,6 +61,35 @@ h1 {
     margin-bottom: 25px;
 }
 
+.Title--alt {
+    line-height: 25px;
+    margin-bottom: 30px;
+}
+
+.Title--alt.Title--smaller {
+    line-height: 22px;
+    margin-bottom: 15px;
+}
+
+.Title--alt.Title--smaller mark {
+    font-size: 24px;
+}
+
+@media (min-width: 900px) {
+    .Title--alt {
+        line-height: 50px;
+    }
+
+    .Title--alt.Title--smaller {
+        line-height: 45px;
+    }
+
+    .Title--alt.Title--smaller mark {
+        font-size: 50px;
+    }    
+}
+
+
 h2 {
     font-size: 30px;
     margin-bottom: 30px;
@@ -326,9 +355,13 @@ img {
     display: block;
 }
 .Slide h2 {
-    font-size: 40px;
+    font-size: 35px;
     text-transform: uppercase;
     font-weight: 600;
+}
+
+.Slide p {
+    text-shadow: 0 0 5px hsl(232, 41%, 20%)
 }
 
 .Slide p, .Slide ul li {
@@ -541,6 +574,34 @@ img {
 }
 
 
+/*
+    Influenciadores Child
+*/
+
+.Influenciadores__child {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.Influenciadores__child h1 {
+    align-self: flex-start;
+}
+
+.Influenciadores__child .Squares:first-of-type {
+    bottom: -8vw;
+    left: -8vw;
+    width: 18vw;
+    height: 18vw;
+}
+
+.Influenciadores__child .Squares:last-of-type {
+    width: 10vw;
+    height: 10vw;
+    top: -5vw;
+    right: -5vw;
+}
+
 
 /*
     Agradecimentos css
@@ -604,6 +665,8 @@ ul.Team li > span {
     justify-content: center;
     align-items: center;
 }
+
+.f-wrap { flex-wrap: wrap; }
 
 @media (min-width: 900px) {
     .Slide__content {
