@@ -28,11 +28,13 @@ function createThumb(section) {
     div.setAttribute('data-link', section.getAttribute('data-slug'))
     div.classList.add('thumb')
     div.innerHTML = `<span>${title}</span>`
-    div.style.backgroundImage = `url(${section.getAttribute('data-image')})`
+
+    const bgImage = section.getAttribute('data-image')
+    if(bgImage) div.style.backgroundImage = `url(${bgImage})`
 
     div.addEventListener('click', function() {
         setSelected(this)
-        section.scrollIntoView({behavior: 'smooth'})
+        section.scrollIntoView()
     })
     
     return div
@@ -58,7 +60,7 @@ window.addEventListener('load', function(){
             e.preventDefault();
             const link = e.target.getAttribute('data-link-to')
             const post = document.querySelector(`[data-post-link="${link}"]`)
-            post.scrollIntoView({behavior: 'smooth'})
+            post.scrollIntoView()
         })
     })
     
@@ -71,15 +73,22 @@ window.addEventListener('load', function(){
     } else {
         document.querySelector('.thumb').click()
     }
+
+    window.addEventListener('resize', () => {
+        changeVhVar()
+        setTimeout(() => {
+            const theHash = location.hash.substr(1);
+            if(routes.includes(theHash)) {
+                const section = document.querySelector(`[data-slug="${theHash}"]`)
+                section.scrollIntoView()
+            } else {
+                document.querySelector('.thumb').click()
+            }
+        }, 200)
+    });
+
 })
 
 
-window.addEventListener('resize', () => {
-    changeVhVar()
-    setTimeout(() => {
-        const theHash = location.hash.substr(1);
-        const section = document.querySelector(`[data-slug="${theHash}"]`)
-        section.scrollIntoView({behavior: 'smooth'})
-    }, 200)
-});
+
 
