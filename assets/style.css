@@ -532,10 +532,6 @@ img {
     padding: 10px 40px;
 }
 
-@media (max-width: 900px) {
-    .Slide--definicao .Scroll-icon { display: none; }
-}
-
 /*
     Ferramentas
 */
@@ -790,3 +786,21 @@ ul.Team li > span {
 }
 
 */
+
+
+@media (max-width: 900px) {
+    .glide-holder .glide__slide {
+        padding: 0;
+    }
+    
+    
+    [data-glide-el="controls"] {
+        margin-top: 15px;
+        margin-bottom: 30px;
+        justify-content: flex-end;
+    }
+
+    .Slide .glide p {
+        font-size: 16px;
+    }
+}
