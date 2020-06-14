@@ -358,6 +358,7 @@ img {
     font-size: 35px;
     text-transform: uppercase;
     font-weight: 600;
+    color: #f3cd74;
 }
 
 .Slide p {
@@ -384,6 +385,7 @@ img {
     position: relative;
     z-index: 1;
     padding: 40px;
+    width: 100%;
 }
 
 .Squares {
@@ -672,11 +674,12 @@ ul.Team li > span {
     .Slide__content {
         min-height: 100vh;
         min-height: calc(var(--vh, 1vh) * 100.2);
+        width: 50%;
     }
 
     .Slide--two-columns {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-direction: row;
     }
 
     .Slide h1 {
@@ -687,3 +690,103 @@ ul.Team li > span {
         font-size: 30px;
     }
 }
+
+.glide-holder {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    align-items: center;
+}
+
+.glide-holder .glide__slide {
+    padding: 20px;
+}
+
+[data-glide-el="controls[nav]"] {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+[data-glide-dir] {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background-color: hsl(231, 34%, 49%);
+    border-radius: 3px;
+    margin: 0 4px;
+    cursor: pointer;
+}
+
+[data-glide-el="controls"] {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+[data-glide-el="controls"] > [data-glide-dir] {
+    font-size: 15px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .25s;
+    box-shadow: 0 0 1px hsl(231, 34%, 49%);
+    background: none;
+    color: #5dcad1;
+    border-radius: 4px;
+}
+
+/*
+[data-glide-el="controls"] > [data-glide-dir] {
+    border: none;
+    box-shadow: 0 0 1px #f3cd74;
+    color: #f3cd74;
+}
+*/
+
+
+[data-glide-el="controls"] > [data-glide-dir]:hover {
+    color: hsla(184, 56%, 80%, 1);
+    box-shadow: 0 0 1px hsla(184, 56%, 80%, 1);
+
+}
+
+/*
+[data-glide-el="controls"] > [data-glide-dir]:hover {
+    color: hsl(232, 41%, 20%);
+    background: rgba(243, 205, 116, .9);
+    box-shadow: none;
+}
+*/
+
+
+[data-glide-el="controls[nav]"] > [data-glide-dir] {
+    display: block;
+    width: 100%;
+    height: 2px;
+    transition: .4s
+}
+
+[data-glide-el="controls[nav]"] > [data-glide-dir]:hover {
+    background-color: rgba(175, 229, 233, .7);
+    box-shadow: 0 0 3px rgba(93, 202, 209, .4);
+}
+
+[data-glide-el="controls[nav]"] > [data-glide-dir].glide__bullet--active {
+    background-color: rgba(175, 229, 233, 1);
+    box-shadow: 0 0 3px #5dcad1;
+}
+
+/*
+
+
+[data-glide-el="controls[nav]"] > [data-glide-dir].glide__bullet--active {
+    background-color: #f3cd74;
+    box-shadow: none;
+}
+
+*/

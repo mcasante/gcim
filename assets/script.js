@@ -87,6 +87,11 @@ window.addEventListener('load', function(){
         }, 200)
     });
 
+    new Glide('.glide', {
+        type: 'carousel',
+        startAt: 0,
+        gap: 40,
+      }).mount()
 })
 
 
