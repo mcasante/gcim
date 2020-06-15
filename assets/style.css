@@ -593,6 +593,18 @@ img {
     right: -5vw;
 }
 
+.Conclusao .Squares:first-of-type {
+    top: -8vw;
+    left: -8vw;
+}
+
+.Conclusao .Squares:last-of-type {
+    width: 18vw;
+    height: 18vw;
+    bottom: -5vw;
+    right: -5vw;
+}
+
 
 /*
     Estrategia
@@ -866,4 +878,42 @@ ul.Team li > span {
     .self-md-end {
         align-self: flex-end;
     }
+}
+
+.nav-estrategia ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+}
+
+@media(min-width: 900px) {
+    .nav-estrategia ul {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.nav-estrategia ul li:before {
+    display: none;
+}
+
+.nav-estrategia ul li a {
+    color: #FFF;
+    display: block;
+    padding: 10px;
+    border: 1px solid #FFF;
+    font-weight: 300;
+    text-decoration: none;
+    transition: .25s;
+    text-align: center;
+}
+
+.nav-estrategia ul li a:hover {
+    background: #FFF;
+    color: hsl(232, 41%, 20%);
+}
+
+
+.Estrategia .Slide__content {
+    flex-direction: column;
+    width: 100%;
 }

@@ -53,7 +53,7 @@ window.addEventListener('load', function(){
     const sections = selectAll('#main section')
     const thumbHolder = document.querySelector('#thumbnails .Thumbnails')
 
-    const scrollButtons = selectAll('.Scroll-icon');
+    const scrollButtons = selectAll('.scroll-button');
 
     scrollButtons.forEach(button => {
         button.addEventListener('click', e => {
