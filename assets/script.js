@@ -105,6 +105,11 @@ window.addEventListener('load', function(){
       console.log(influencerImages.index)
     })
 
+    influencerImages.on(['mount.after', 'run'], function () {
+        influencerTypeSlide.go('=' + influencerImages.index)
+        console.log(influencerTypeSlide.index)
+      })
+
     influencerTypeSlide.mount()
 
 
