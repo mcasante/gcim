@@ -101,14 +101,12 @@ window.addEventListener('load', function(){
     }).mount()
 
     influencerTypeSlide.on(['mount.after', 'run'], function () {
-      influencerImages.go('=' + influencerTypeSlide.index)
-      console.log(influencerImages.index)
+        influencerImages.go('=' + influencerTypeSlide.index)
     })
 
     influencerImages.on(['mount.after', 'run'], function () {
         influencerTypeSlide.go('=' + influencerImages.index)
-        console.log(influencerTypeSlide.index)
-      })
+    })
 
     influencerTypeSlide.mount()
 
