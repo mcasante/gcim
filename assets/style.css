@@ -747,6 +747,10 @@ ul.Team li > span {
     align-items: center;
 }
 
+.glide__slides {
+    align-items: center;
+}
+
 .glide-holder .glide__slide {
     padding: 20px;
 }
